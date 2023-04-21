@@ -1,0 +1,100 @@
+
+
+<div class="container">
+    <div class="left">
+        <div class="header">
+        <h2 class="animation a1">Register with Food Finder</h2>
+        <h4 class="animation a2">Explore a World of Delicacies</h4>
+        <div class="form">
+            <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+                <table>
+                    <tr>
+                        <div class="form-input-material">
+                        <td>
+                            <input type="email" placeholder="Email Address" formControlName="email" class="form-field animation a3"> 
+                        </td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td  *ngIf="username && username.invalid && username.touched"> 
+                                this input is invalid
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="form-input-material">
+                            <input type="password" placeholder="Password" formControlName="password" class="form-field animation a3">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td *ngIf="password && password.invalid && password.touched">
+                            password input is invalid - e.g. should have at least 6 characters   
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="form-input-material">
+                            <input type="password" placeholder="Re-Enter Password" formControlName="passwordAgain" class="form-field animation a3">               
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td *ngIf="passwordAgain && passwordAgain.invalid && passwordAgain.touched">
+                            password do not matchhhhhh
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-input-material">
+                            <input type="text" placeholder="Full Name" formControlName="full_name" class="form-field animation a3">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-input-material">
+                            <input type="text" placeholder="Contact Number" formControlName="contact_number" class="form-field animation a3">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-input-material">
+                            <input type="text" placeholder="Address" formControlName="address" class="form-field animation a3">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-input-material">
+                            <input type="text" placeholder="Postal Code" formControlName="postal_code" class="form-field animation a3">
+                            </div>
+                        </td>
+                    </tr>
+                    
+                </table>
+                <button mat-button type="submit" [disabled]="registerForm.invalid">Sign up</button>
+            </form>
+        </div>
+            <div>
+                <p>Already have an account? 
+                    <button mat-button [routerLink]="['/']" >Login here!</button>
+                </p>
+            </div>
+    </div>
+    </div>
+    <div class="right"></div>
+</div>
+
+<!-- <div>
+    <p>Already have an account? 
+        <button mat-raised-button color="primary" [routerLink]="['/']" >Login here!</button>
+    </p>
+
+    <button mat-fab extended [routerLink]="['/']">
+        Login Here!
+      </button>
+</div> -->

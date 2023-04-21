@@ -1,0 +1,40 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+     <img src="assets/images/icon2.jpg" alt="" class="icon">
+      <span>Food Finder</span>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/home']"><mat-icon>home</mat-icon>Home</a>
+      <span class="spacer"></span>
+      
+      <a mat-button [routerLink]="['/findarecipe']"><mat-icon>search</mat-icon>Search</a>
+      <span class="spacer"></span>
+      
+      <a mat-button [routerLink]="['/savedrecipes']"> <mat-icon>favorite</mat-icon>Favourites</a>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/profile']"><mat-icon>group</mat-icon>Profile</a>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/store']"><mat-icon>phone</mat-icon>Contact</a>
+      <span class="flexExpand"></span>
+      <button mat-raised-button color="accent" type="button" (click)="logOut()">Logout</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<div style="background-image: url('https://images.unsplash.com/photo-1496116218417-1a781b1c416c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); height: 100vh; background-size: cover; background-position: center;">  
+    <h1 style="font-family: monospace;">Greetings {{emailLogged}}!</h1>
+    <div class="container">
+      <img src="assets/images/teleSample.jpg" alt="" style="width: 50%; border-radius: 5%;">
+          <div style="width: 50%; padding: 0 20px;">
+            <h2 style="font-family: monospace;">Food Finder Telegram Bot is live!</h2>
+            <h2 style="font-family: monospace;">Join now at t.me/FoodFinderAppBot</h2>
+            <h3 style="font-family: monospace;">Key in your email address and instantly view all your saved recipes</h3>
+          </div>
+    </div>
+</div>
+<!-- logout button that will reset the localStorage user -->
+<!-- links to other pages like search recipe page/ favourite page/ profile page/ forum page-->
+
+
+<br>

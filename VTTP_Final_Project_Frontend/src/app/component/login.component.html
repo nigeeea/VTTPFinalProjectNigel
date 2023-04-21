@@ -1,0 +1,89 @@
+<!-- 
+
+    <div class="brand-logo"></div>
+    <div class="brand-title">Food Finder App</div>
+    <div class="inputs">
+        <h1>Login Page</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="login-form">
+            <table> 
+                <tr>
+                    <td>
+                        <div class="form-input-material">
+                        <label>EMAIL</label>
+                        <input type="email" placeholder="example@mail.com" formControlName="email" class="form-control-material">
+                        </div>
+                    </td>   
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-input-material">
+                        <label>PASSWORD</label>
+                        <input type="text" placeholder="*********" formControlName="password" class="form-control-material">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="submit" class="btn btn-primary btn-ghost">Login</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <br>
+
+    <div>
+        <p>Don't have an account? <button [routerLink]="['/registration']">Signup Now!</button></p>
+    </div> -->
+
+    <div class="container">
+        <div class="left">
+          <div class="header">
+            <h2 class="animation a1">Welcome Back Food Finder</h2>
+            <h4 class="animation a2">Log in to your account using email and password</h4>
+          </div>
+          <div class="form">
+
+            <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="login-form">
+                <table> 
+                    <tr>
+                        <td>
+                            <div class="form-input-material">
+                            
+                            <input type="email" placeholder="Email Address" formControlName="email" class="form-field animation a3">
+                            </div>
+                        </td>   
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-input-material">
+                            
+                            <input type="password" placeholder="Password" formControlName="password" class="form-field animation a4">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button mat-button type="submit" class="animation a6">Login</button>
+                            <!-- <a mat-button [routerLink]="['/home']">Login</a> -->
+                        </td>
+                    </tr>
+                </table>
+                <p>Don't have an account? <button mat-button [routerLink]="['/registration']">Signup Now!</button></p>
+                <br>
+                <p>email: jake@gmail.com</p>
+                <p>password: jakepw</p>
+            </form>
+            
+          </div>
+        </div>
+        <div class="right"></div>
+      </div>
+<!-- https://codepen.io/knyttneve/pen/JQppEw -->
+
+
+
+
+
+

@@ -1,0 +1,135 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="navbar">
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+     <img src="assets/images/icon2.jpg" alt="" class="icon">
+      <span>Food Finder</span>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/home']"><mat-icon>home</mat-icon>Home</a>
+      <span class="spacer"></span>
+      
+      <a mat-button [routerLink]="['/findarecipe']"><mat-icon>search</mat-icon>Search</a>
+      <span class="spacer"></span>
+      
+      <a mat-button [routerLink]="['/savedrecipes']"> <mat-icon>favorite</mat-icon>Favourites</a>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/profile']"><mat-icon>group</mat-icon>Profile</a>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/store']"><mat-icon>phone</mat-icon>Contact</a>
+      <span class="flexExpand"></span>
+      <button mat-raised-button color="accent" type="button" (click)="logOut()">Logout</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+</div>
+<!-- <button [routerLink]="['/home']">home</button>
+<button [routerLink]="['/findarecipe']">search recipe</button>
+<button [routerLink]="['/savedrecipes']">favourites</button>
+<button [routerLink]="['/profile']">profile</button>
+<button [routerLink]="['/store']">store</button>
+<button type="button" (click)="logOut()">Logout</button>
+<br><br> -->
+
+
+<!-- <div style="background-image: url('assets/images/Background.jpg'); min-height: 150vh; height: 100%; background-size: cover; background-position: center;">  -->
+<div style="background-image: url('https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); min-height: 150vh; height: 100%; background-size: cover; background-position: center;"> 
+    <br>
+    <div class="container">
+    <form [formGroup]="searchForm" (ngSubmit)="submitForm()">
+        <!-- <input type="text" formControlName="cuisine"> -->
+        <select style=" font-family: monospace;" type="text" formControlName="cuisine">
+            <option value="">Select your Cuisine!</option>
+                    <option value="African">African</option>
+                    <option value="American">American</option>
+                    <option value="British">British</option>
+                    <option value="Cajun">Cajun</option>
+                    <option value="Carribean">Carribean</option>
+                    <option value="Eastern European">Eastern European</option>
+                    <option value="European">European</option>
+                    <option value="French">French</option>
+                    <option value="German">German</option>
+                    <option value="Greek">Greek</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Irish">Irish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Jewish">Jewish</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Latin American">Latin American</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Middle Eastern">Middle Eastern</option>
+                    <option value="Nordic">Nordic</option>
+                    <option value="Southern">Southern</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Vietnamese">Vietnamese</option>
+        </select>
+        <br>
+        <input style=" font-family: monospace; width: 80px;" type="number" min="200" max="3000" formControlName="calories" placeholder="calories">
+        <button type="submit" class="search-button">search</button>
+    </form>
+    </div>
+
+<br>
+
+<div class="container">
+    <h2 *ngIf="!recipeReceived" style=" font-family: monospace;">No Results Yet!</h2>
+    <table>
+        <tr>
+            <td>
+                <img [src]="recipeReceived.image" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h2 style="font-family: monospace;">{{recipeReceived.recipe_name}}</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Calories: {{recipeReceived.calories}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Cuisine: {{recipeReceived.cuisine}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Recipe ID: {{recipeReceived.recipe_id}}
+            </td>
+        </tr>
+        <!-- <tr>
+            <td>
+                <a href="{{recipeReceived.url}}" target="_blank">{{recipeReceived.url}}</a>
+            </td>
+        </tr> -->
+        <tr>
+            <td>
+                Ingredients: {{recipeReceived.ingredients}}
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <ul>
+                    <li *ngFor="let s of recipeReceived.steps; let i = index"> {{i+1}}: {{s}}</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button *ngIf="recipeReceived" class="save-button" (click)="saveRecipeTwo()">Save Recipe</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{savedStatus || null}}
+            </td>
+        </tr>
+    </table>
+</div>
+    <br>
+</div>
+    
+

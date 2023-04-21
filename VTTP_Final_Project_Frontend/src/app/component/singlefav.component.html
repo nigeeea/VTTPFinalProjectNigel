@@ -1,0 +1,53 @@
+<div style="background-color: lightblue;">
+    <!-- https://www.educative.io/answers/how-to-create-the-arrow-symbol-in-html -->
+<button style="color: blue;" (click)="goBack()">&#8592;Go Back</button>
+<br>
+<br>
+
+
+<div class="container">
+    <div style="width: 50%; padding: 0 20px;">
+        <img [src]="favRecipeImage" alt="" style="border-radius: 10%;">
+    </div>
+    <table>
+        <tr>
+            <h1 style="font-family: monospace;">{{favRecipeName}}</h1>
+        </tr>
+        <tr>
+           <h2 style="font-family: monospace;">Calories: {{favRecipeCalories}}</h2>     
+        </tr>
+        <tr>
+            <h2 style="font-family: monospace;">Cuisine: {{favRecipeCuisine}}</h2>
+        </tr>
+        <tr>
+            <h2 style="font-family: monospace;">Recipe ID: {{favRecipeId}}</h2>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+<table>
+    <thead>
+        Ingredients:
+    </thead>
+    <tr>
+        <td>{{recipeInstructions.ingredients}}</td>
+    </tr>
+</table>
+</div>
+
+<div class="container">
+<table>
+    <thead>Instructions:</thead>
+    <tbody *ngFor="let s of recipeInstructions.steps">
+        <tr>
+            <td>
+                <ul>
+                    <li>{{s}}</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>

@@ -1,0 +1,72 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+     <img src="assets/images/icon2.jpg" alt="" class="icon">
+      <span>Food Finder</span>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/home']"><mat-icon>home</mat-icon>Home</a>
+      <span class="spacer"></span>
+      
+      <a mat-button [routerLink]="['/findarecipe']"><mat-icon>search</mat-icon>Search</a>
+      <span class="spacer"></span>
+      
+      <a mat-button [routerLink]="['/savedrecipes']"> <mat-icon>favorite</mat-icon>Favourites</a>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/profile']"><mat-icon>group</mat-icon>Profile</a>
+      <span class="spacer"></span>
+      <a mat-button [routerLink]="['/store']"><mat-icon>phone</mat-icon>Contact</a>
+      <span class="flexExpand"></span>
+      <button mat-raised-button class="lg-button" color="accent" type="button" (click)="logOut()">Logout</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div style="background-image: url('https://images.unsplash.com/photo-1604328471151-b52226907017?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80'); height: 100vh; background-size: cover; background-position: center;">  
+<br><br>
+  <div class="container">
+    <img src="https://images.unsplash.com/photo-1622329915089-ea1c29cee209?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1159&q=80" alt="profile image" style="width: 50%; border-radius: 5%;">
+    <!-- <img src="https://images.unsplash.com/photo-1628094968061-9c9612d5d314?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="profile image" style="width: 50%; border-radius: 5%;"> -->
+
+    <div style="width: 50%; padding: 0 20px;">
+      <h2 style="font-family: monospace;"> Your Profile <button style="border-radius: 20%; font-family: monospace;" (click)="edit()">Edit</button></h2>
+      <form style="display: flex; justify-content: center;" [formGroup]="editProfileForm" (ngSubmit)="submitForm()">
+          <table>
+              <tbody>
+                  <!-- for some reason i need to have this hidden field in my code that includes a 
+                  formControlName, otherwise the value of the first form field wont show up...??? -->
+                  <tr hidden>
+                      <td><input type="text" formControlName="blank" value="Nothing Here"></td>
+                  </tr>
+                  <tr>
+                      <td>Email:</td>
+                      <td><input style=" font-family: monospace;" type="text" formControlName="email"></td>
+                  </tr>
+                  <tr>
+                      <td>Full Name:</td>
+                      <td><input style=" font-family: monospace;" type="text" formControlName="full_name"></td>
+                  </tr>
+                  <tr>
+                      <td>Contact No.:</td>
+                      <td><input style=" font-family: monospace;" type="text" formControlName="contact_number"></td>
+                  </tr>
+                  <tr>
+                      <td>Address:</td>
+                      <td><input style=" font-family: monospace;" type="text" formControlName="address"></td>
+                  </tr>
+                  <tr>
+                      <td>Postal Code:</td>
+                      <td><input style=" font-family: monospace;" type="text" formControlName="postal_code"></td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td><button style=" font-family: monospace; height: 30px; font-size: small;" mat-button type="submit" [disabled]="toEdit">update profile</button></td>
+                  </tr>
+              </tbody>
+          </table>
+      </form>
+    </div>
+  </div>
+
+
+
+<!-- create edit profile functionality -->

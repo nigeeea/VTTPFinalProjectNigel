@@ -1,0 +1,52 @@
+.map-container {
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 90px;
+    border-radius: 5%;
+  }
+
+  
+  .map-frame {
+    border: 0px solid black;
+    height: 80%;
+    width: 50%;
+    border-radius: 5%;
+  }
+  
+  #map {
+    height: 100%;
+    border-radius: 5%;
+  }
+  
+.flexExpand {
+    flex: 1 1 auto;
+}
+.spacer {
+    flex: 0.1;
+  }
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transform: scale(0.8);
+}
+.container {
+  width: 100%;
+  max-width: 370px; 
+  padding: 20px;
+  border: 0px solid #000000;
+  border-radius: 30px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: left;
+  font-family: monospace;
+  margin-bottom: 30px;
+  background-color: rgb(220, 242, 250);
+  margin-left: -5px;
+}
+
